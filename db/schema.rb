@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_204417) do
     t.text "description"
     t.integer "user_id"
     t.boolean "public"
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -32,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_204417) do
     t.string "name"
     t.integer "age"
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

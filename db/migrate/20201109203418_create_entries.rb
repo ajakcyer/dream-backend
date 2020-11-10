@@ -4,7 +4,7 @@ class CreateEntries < ActiveRecord::Migration[6.0]
       t.text :description
       t.integer :user_id
       t.boolean :public
-
+      t.string :title
       t.timestamps
     end
   end
