@@ -6,17 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-5.times {
-    user = User.create(name: Faker::Name.name, username: Faker::Internet.username, age: rand(13...70), password: "123", password_confirmation: '123')
-
     3.times {
-        entry = Entry.create(description: Faker::Lorem.sentences, title: Faker::Company.catch_phrase, user_id: user.id, public: false)
+        entry = Entry.create(description: Faker::Lorem.sentences, title: Faker::Company.catch_phrase, user_id: User.all.sample.id, public: false)
 
-        2.times {
-            Comment.create(comment: Faker::Lorem.sentence, user_id: user.id, entry_id: entry.id)
-
-        }
-
+        # 2.times {
+        #     Comment.create(comment: Faker::Lorem.sentence, user_id: user.id, entry_id: entry.id)
+        # }
     }
-
-}
+    
