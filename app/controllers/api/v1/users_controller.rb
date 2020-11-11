@@ -6,17 +6,20 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def create
-        user = User.new(user_params)
-        user.save
+        user = User.create(user_params)
+
         render json: user
     end
     
     def show
+        # user = User.find(params[:id])
+        # render json: user
+        # byebug
         user = User.find(params[:id])
         render json: user
     end
 
     def user_params
-        params.permit(:username, :name, :age, :password, :password_confirmation)
-       end
+        params.permit(:username, :name, :age, :password)
+    end
 end
