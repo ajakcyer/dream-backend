@@ -11,7 +11,14 @@ class Api::V1::CommentsController < ApplicationController
     end
 
     def create
-        byebug
+        # byebug
         comment = Comment.create(comment_params)
+        render json: comment
+    end
+
+    private
+
+    def comment_params
+        params.permit(:comment, :user_id, :entry_id)
     end
 end
