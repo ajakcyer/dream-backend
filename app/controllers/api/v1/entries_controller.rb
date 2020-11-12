@@ -16,6 +16,13 @@ class Api::V1::EntriesController < ApplicationController
         render json: entry
     end
 
+    def update
+        entry = Entry.find(params[:id])
+        byebug
+        entry = Entry.update(create_params)
+        render json: entry
+    end
+
     private
 
     def create_params
