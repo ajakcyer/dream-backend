@@ -11,11 +11,16 @@ class Api::V1::EntriesController < ApplicationController
     end
 
     def create
-        byebug
+        # byebug
         entry = Entry.create(create_params)
+        render json: entry
     end
 
     private
+
+    def create_params
+        params.permit(:title, :description, :user_id, :public)
+    end
 
     
 end
