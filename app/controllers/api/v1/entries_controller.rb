@@ -18,9 +18,16 @@ class Api::V1::EntriesController < ApplicationController
 
     def update
         entry = Entry.find(params[:id])
-        byebug
+        # byebug
         entry.update(create_params)
         render json: entry
+    end
+
+    def destroy
+        entry = Entry.find(params[:id])
+        byebug
+        entry.destroy
+        render json: {}
     end
 
     private
