@@ -11,7 +11,7 @@ class Api::V1::CommentsController < ApplicationController
     end
 
     def create
-        byebug
+        # byebug
         comment = Comment.create(comment_params)
         render json: comment
     end
