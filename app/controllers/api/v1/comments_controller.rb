@@ -16,6 +16,13 @@ class Api::V1::CommentsController < ApplicationController
         render json: comment
     end
 
+    def destroy
+        comment = Comment.find(params[:id])
+        # byebug
+        comment.destroy
+        render json: {}
+    end
+
     private
 
     def comment_params
